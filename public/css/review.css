@@ -1,0 +1,118 @@
+.review-section {
+    background-color: var(--dg-ye);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    color: var(--grey);
+    text-align: center;
+    padding: 150px 20px 300px;
+    transform: translateY(100px);
+}
+
+.review-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #222;
+}
+
+.review-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.review-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ye);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 350px;
+    flex: 1 1 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+.review-box .img-wrapper{
+    max-width: 50px !important;
+    height: 50px !important;
+}
+.review-box .img-wrapper img{
+     width: 100%;
+    height: 100%;
+ }
+
+.review-box:hover {
+    transform: scale(1.05);
+}
+
+.review-box .icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.review-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.review-box p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+}
+.review-box p::before,
+.review-box p::after {
+    content: '"';
+    font-size: 2rem;
+    color: #999;
+    position: relative;
+    top: 5px;
+}
+.review-photos {
+    margin-top: 100px;
+    padding: 60px 20px;
+}
+@media (max-width: 768px) {
+    .review-section{
+
+        padding: 150px 20px 150px;
+    }
+    .review-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .review-boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .review-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .review-box p {
+        font-size: 0.95rem;
+    }
+
+    .review-box .img-wrapper {
+        max-width: 40px !important;
+        height: 40px !important;
+    }
+
+    .sortiment-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .sortiment-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}

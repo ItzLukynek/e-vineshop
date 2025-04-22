@@ -1,0 +1,58 @@
+<div class="topbar">
+    <div class="topbar-left">
+        <span>+420 123 456 789</span>
+    </div>
+    <div class="topbar-right">
+        <a href="#">Přihlásit</a>
+        <a href="#">Registrovat</a>
+    </div>
+</div>
+
+<header class="main-header">
+    <div class="hrozny">
+        <img src="{{ asset('images/design/hrozny.png') }}" alt="hrozny">
+
+    </div>
+    <div class=" d-flex justify-content-between align-items-start">
+
+        <img src="{{ asset('images/design/logo.png') }}" alt="Logo" class="logo">
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Objednávky</a></li>
+                <li><a href="#">Rezervace</a></li>
+                <li><a href="https://vinoteka-delikatesy.cz/">Náš web</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+
+
+</header>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="d-flex justify-content-end">
+        <div class="cross" onclick="toggleMenu()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <ul>
+            <li><a href="#">Objednávky</a></li>
+            <li><a href="#">Rezervace</a></li>
+            <li><a href="https://vinoteka-delikatesy.cz/">Náš web</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu.style.transform === 'translateX(0px)') {
+            menu.style.transform = 'translateX(-100%)';
+        } else {
+            menu.style.transform = 'translateX(0px)';
+        }
+    }
+</script>

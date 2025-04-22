@@ -1,0 +1,70 @@
+.sortiment-hero {
+    position: relative;
+    height: 80vh;
+    background-image: url('/images/design/vin1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.sortiment-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65); /* Zatmavení celé sekce */
+    z-index: 1;
+}
+
+.sortiment-content {
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 2;
+    max-width: 90%;
+}
+
+.sortiment-content h2 {
+    color: var(--grey);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: calc(2vw + 30px);
+    text-shadow: 0 0 30px white, 0 0 15px white, 0 0 15px white;
+}
+
+
+.sortiment-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0d6efd;
+    background-image: url("/images/design/prkno.png");
+    border-radius: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 25px;
+    color: var(--grey);
+    font-weight: bold;
+    text-shadow:
+            0 0 5px var(--white),
+            0 0 10px var(--white),
+            0 0 15px var(--white),
+            0 0 20px var(--white);
+}
+.sortiment-button:hover {
+    transform: scale(1.075);
+    transition: 0.5s;
+
+}
+
+@media(max-width: 996px){
+    .sortiment-hero {
+        transform: translateY(-150px);
+        height: 40vh;
+    }
+}

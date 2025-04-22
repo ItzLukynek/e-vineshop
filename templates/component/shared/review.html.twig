@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/review.css') }}">
+{% endblock %}
+
+{% block body %}
+    <section class="review-section">
+        <div class="underr">
+            <h2 class="review-title">Co o nás říkají zákazníci</h2>
+            <div class="review-boxes">
+                <div class="review-box">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('/images/design/icons/woman.png') }}" alt="">
+                    </div>
+                    <h3>Jana Nováková</h3>
+                    <p>Skvělá zkušenost, balíček byl nádherně zabalený!</p>
+                </div>
+                <div class="review-box">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('/images/design/icons/man.png') }}" alt="">
+                    </div>
+                    <h3>Martin Dvořák</h3>
+                    <p>Sýry výborné, víno ještě lepší. Doporučuji všem</p>
+                </div>
+                <div class="review-box">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('/images/design/icons/woman1.png') }}" alt="">
+                    </div>
+                    <h3>Petra Kovářová</h3>
+                    <p>Dárkový koš udělal velkou radost, objednám znovu.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

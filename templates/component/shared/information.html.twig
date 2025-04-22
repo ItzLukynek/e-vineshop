@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/information.css') }}">
+    {% endblock %}
+
+{% block body %}
+    <section class="info-section top-sectio container-fluid">
+        <div class="info-block left row" data-aos="fade-right">
+            <div class="info-image img-1 col-12 col-xl-6"></div>
+            <div class="info-text pe-5 col-12 col-xl-6">
+                <div class="d-flex flex-column justify-content-center align-items-start">
+                    <h2>Objednání balíčku online</h2>
+                    <p>Zašlete nám objednávku online a my Vám připravíme stylový balíček dle Vašeho přání. Stačí se zaregistrovat a vyplnit kráký formulář a my se už o vše postaráme</p>
+                    <a href="#" class="info-button">Přejít na objednávku</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section container-fluid ">
+        <div class="info-block right row" data-aos="fade-right">
+            <div class="info-image img-2 col-12 col-xl-6"></div>
+            <div class="info-text ps-5 col-12 col-xl-6 ">
+                <div class="d-flex  flex-column justify-content-center align-items-end">
+                    <h2 class="text-end">Široký výběr sýrů</h2>
+                    <p class="text-end ">Do balíčků Vám můžeme nakrájet a zavakuovat lahodné sýry z naší nabídky. Kravské, ovčí a kozí sýry různých druhů od bylinek po lanýže. Stavte se u nás a ochutnejte je zdarma</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="info-section container-fluid">
+        <div class="info-block left row" data-aos="fade-right">
+            <div class="info-image img-3 col-12 col-xl-6   "></div>
+            <div class="info-text pe-5 col-12  col-xl-6 ">
+                <div class="d-flex flex-column justify-content-center align-items-start">
+                    <h2>Sháníte dárek?</h2>
+                    <p>U nás si vybere opravdu každý. Náš široký sortiment zahrnuje vše od kvalitního vína a prémiového alkoholu, přes belgické čokolády a léčivé čaje, až po uzeniny a stylové dárkové balíčky na míru.</p>
+                    <a href="#" class="info-button">Kde nás najdete?</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+{% endblock %}

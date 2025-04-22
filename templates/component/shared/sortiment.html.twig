@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sortiment.css') }}">
+{% endblock %}
+{% block body %}
+    <section class="sortiment-hero">
+        <div class="sortiment-content">
+            <h2>Zajímá vás náš sortiment?</h2>
+            <a href="/sortiment" class="mt-5 sortiment-button">ZOBRAZIT VÍCE</a>
+        </div>
+    </section>
+{% endblock %}
+

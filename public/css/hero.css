@@ -1,0 +1,88 @@
+.hero-section {
+    background: url('/images/design/carouselbg2.jpg') no-repeat center center;
+    background-size: cover;
+    background-position:top;
+    height: auto;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    padding-top: 250px;
+    padding-bottom: 200px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+.hero-title {
+    color: var(--grey);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: calc(5vw + 40px);
+    text-shadow: 0 0 30px white, 0 0 15px white, 0 0 15px white;
+}
+
+.hero-boxes {
+    margin-top: 80px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hero-boxes a{
+    text-decoration: none;
+    color: var(--grey);
+    transition: 0.3s;
+    text-shadow: 0 0 30px white, 0 0 15px white, 0 0 15px white;
+
+}
+.hero-boxes a:hover{
+
+    transform: scale(1.1);
+    transition: 0.3s;
+    text-decoration: none;
+    color: var(--white);
+    text-shadow: 0 0 0 ;
+}
+.hero-box {
+    background-color: var(--ye);
+    padding: 50px 30px;
+    border-radius: 2px;
+    width: 450px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hero-box h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.hero-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #fdbe35;
+    color: var(--grey);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #d99e1d;
+}
