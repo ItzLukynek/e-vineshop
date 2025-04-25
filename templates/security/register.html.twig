@@ -1,14 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Register</h1>
+{% block title %}Registrace{% endblock %}
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.firstName) }}
-    {{ form_row(registrationForm.lastName) }}
-    {{ form_row(registrationForm.phone) }}
-    {{ form_row(registrationForm.plainPassword) }}
-    <button type="submit">Register</button>
-    {{ form_end(registrationForm) }}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="login-container">
+        <h1>Registrace</h1>
+
+        {{ form_start(registrationForm, {'attr': {'data-turbo': 'false'}}) }}
+        <div class="mb-3">
+            {{ form_label(registrationForm.email, 'E-mail') }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.email) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(registrationForm.firstName, 'Jméno') }}
+            {{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.firstName) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(registrationForm.lastName, 'Příjmení') }}
+            {{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.lastName) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(registrationForm.phone, 'Telefon') }}
+            {{ form_widget(registrationForm.phone, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.phone) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(registrationForm.plainPassword, 'Heslo') }}
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+        </div>
+        <span style="font-size: 12px !important;">Kliknutím na tlačítko souhlasíte se zpracováním a uložením osobních údaju</span>
+
+        <button type="submit" class="btn btn-primary w-100">Registrovat</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}

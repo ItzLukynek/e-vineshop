@@ -32,12 +32,9 @@
     position: relative;
 }
 
-.topbar-left span {
-    font-weight: bold;
-    color: var(--grey);
-}
 
-.topbar-right a {
+
+.topbar a {
     margin-left: 20px;
     color: var(--grey);
     text-decoration: none;

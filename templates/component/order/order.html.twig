@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/order.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include 'component/shared/header.html.twig' %}
+    <div style="margin-bottom: 50px;"></div>
+
+    <div class="order-wrapper">
+
+        {# FLASH ZPRÁVY #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="order-bg">
+            <div class="order-container">
+                <div class="order-description">
+                    <h2>VYTVOŘTE OBJEDNÁVKU BALÍČKU</h2>
+                    <p>Vyberte si položky a vytvořte balíček, který bude splňovat všechny vaše požadavky.</p>
+                </div>
+
+                {{ form_start(form, {
+                    'action': path('order_submit'),
+                    'method': 'POST',
+                    'attr': {'id': 'order-form',
+                    'data-turbo':'false'}
+                }) }}
+
+                {{ form_errors(form) }}
+
+                <div class="form-group">{{ form_row(form.firstName) }}</div>
+                <div class="form-group">{{ form_row(form.lastName) }}</div>
+                <div class="form-group">{{ form_row(form.email) }}</div>
+                <div class="form-group">{{ form_row(form.phone) }}</div>
+
+                <div class="price-range form-group">
+                    <label for="min-price">Minimální přijatelná cena</label>
+                    {{ form_widget(form.minPrice) }}
+                    {{ form_errors(form.minPrice) }}
+                </div>
+
+                <div class="price-range form-group">
+                    <label for="max-price">Maximální přijatelná cena</label>
+                    {{ form_widget(form.maxPrice) }}
+                    {{ form_errors(form.maxPrice) }}
+                </div>
+
+                <div class="form-group">{{ form_row(form.description) }}</div>
+                <div class="form-group">{{ form_row(form.specialNotes) }}</div>
+
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex flex-row">
+                        <button type="submit" class="submit btn btn-secondary">Odeslat s povinností zaplacení</button>
+                        <span class="w-50 mx-2">Platba proběhne při převzetí balíčku na naší prodejně. Hotovost / Platba kartou.</span>
+                    </div>
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+    {% include 'component/shared/footer.html.twig' %}
+{% endblock %}

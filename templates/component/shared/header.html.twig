@@ -1,12 +1,19 @@
 <div class="topbar">
     <div class="topbar-left">
-        <span>+420 123 456 789</span>
+        <a href="tel:+420123456789"><span>+420 123 456 789</span></a>
+
     </div>
     <div class="topbar-right">
-        <a href="#">Přihlásit</a>
-        <a href="#">Registrovat</a>
+        {% if app.user %}
+            <a href="">Uživatel: {{ app.user.firstName }} {{ app.user.lastName }}</a>
+            <a href="{{ path('app_logout') }}">Odhlásit se</a>
+        {% else %}
+            <a href="{{ path('app_login') }}">Přihlásit</a>
+            <a href="{{ path('app_register') }}">Registrovat</a>
+        {% endif %}
     </div>
 </div>
+
 
 <header class="main-header">
     <div class="hrozny">
@@ -19,8 +26,8 @@
 
         <nav class="main-nav">
             <ul>
-                <li><a href="#">Objednávky</a></li>
-                <li><a href="#">Rezervace</a></li>
+                <li><a href="{{ path('order_new') }}">Objednávky</a></li>
+                <li><a href="{#{{ path('reservation/new') }}#}">Rezervace</a></li>
                 <li><a href="https://vinoteka-delikatesy.cz/">Náš web</a></li>
             </ul>
         </nav>
@@ -40,8 +47,8 @@
     </div>
     <div class="d-flex justify-content-center align-items-center mt-5">
         <ul>
-            <li><a href="#">Objednávky</a></li>
-            <li><a href="#">Rezervace</a></li>
+            <li><a href="{{ path('order_new') }}">Objednávky</a></li>
+            <li><a href="{#{{ path('reservation/new') }}#}">Rezervace</a></li>
             <li><a href="https://vinoteka-delikatesy.cz/">Náš web</a></li>
         </ul>
     </div>

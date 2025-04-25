@@ -1,0 +1,43 @@
+<style>
+    .modal-backdrop {
+        z-index: 999999999 !important; /* Adjust z-index of the backdrop to a high value */
+        background-color: rgba(0, 0, 0, 0.7) !important; /* Set background color to dark */
+    }
+
+    /* Modal content to ensure proper visibility */
+    .modal {
+        z-index: 1000000000; /* Very high z-index for modal */
+        margin-top: 100px; /* Adjust margin as needed */
+    }
+
+    /* Optional: Ensure modal content is centered well */
+    .modal-dialog {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderSuccessModalLabel">Objednávka byla odeslána!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Vaše objednávka byla úspěšně odeslána. Bližší informace vám budou zaslány prostřednictvím SMS.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% for message in app.flashes('success') %}
+    <script>
+        var myModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+        myModal.show();
+    </script>
+{% endfor %}
